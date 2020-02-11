@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+    <style>
+        body {
+            background-image: url("https://i.pinimg.com/originals/5f/b9/b0/5fb9b0855149b233f1baabb13ff76010.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        table, td {
+            border: solid black;
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+        }
+
+        .center {
+            align-self: center;
+            width: 30%;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+<img style="display: block; margin: 0 auto;" src="https://tetris.com/assets/brand/project-logo.png">
+<div class="center" align="center" style="margin: 20px auto">
+    <form action="#" method="post">
+        <label>Name</label>
+        <input type="text" name="name">
+        <br />
+        <label>Points</label>
+        <input type="text" name="points" contenteditable="false" th:value="*{points}">
+        <br />
+        <input type="submit" class="btn btn-dark" value="Add Score"/>
+    </form>
+</div>
+</body>
+</html>

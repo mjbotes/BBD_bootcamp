@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+    <style>
+        body {
+            background-image: url("https://i.pinimg.com/originals/5f/b9/b0/5fb9b0855149b233f1baabb13ff76010.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        table, td {
+            border: solid black;
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+        }
+
+        .center {
+            align-self: center;
+            width: 30%;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function myKeyPress(e){
+            var keynum;
+            console.log(e);
+            if(window.event) { // IE
+                keynum = e.keyCode;
+            } else if(e.which){ // Netscape/Firefox/Opera
+                keynum = e.which;
+            }
+            console.log(keynum)
+            if (keynum == 119){
+                window.location.href = 'http://localhost:8080/game/1';
+            }
+            if (keynum == 97){
+                window.location.href = 'http://localhost:8080/game/3';
+            }
+            if (keynum == 115){
+                window.location.href = 'http://localhost:8080/game/4';
+            }
+            if (keynum == 100){
+                window.location.href = 'http://localhost:8080/game/2';
+            }
+        }
+    </script>
+    <img style="display: block; margin: 0 auto;" src="https://tetris.com/assets/brand/project-logo.png">
+    <div class="center" align="center" style="margin: 20px auto">
+        <p>Score: <div th:remove="tag" th:text="${score}"></div></p>
+    <div th:remove="tag" th:utext="${board}" ></div><label>Moves</label>
+    <input autofocus="autofocus" onkeypress="myKeyPress(event)" />
+    </div>
+        <script>
+        setInterval(async function (){
+            window.location.href = 'http://localhost:8080/game/4';
+        }, 1000);
+    </script>
+</body>
+</html>
